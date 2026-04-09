@@ -1,22 +1,7 @@
 
-import { supabase } from "../lib/supabaseClient";
+import { createClient } from '@supabase/supabase-js'
 
-// SIGNUP
-export const signUpUser = async (email: string, password: string) => {
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-  });
+const supabaseUrl = "https://flbbfwlyaunxjnvjqoek.supabase.co"
+const supabaseKey = "sb_publishable_ZbiqBjftXIUQEuCLAQQtNg_g2q6ULje"
 
-  return { data, error };
-};
-
-// LOGIN
-export const loginUser = async (email: string, password: string) => {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-
-  return { data, error };
-};
+export const supabase = createClient(supabaseUrl, supabaseKey)
