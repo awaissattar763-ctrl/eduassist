@@ -22,7 +22,7 @@ import Markdown from 'react-markdown';
 import { Toaster, toast } from 'sonner';
 import { getGeminiResponse, generateDailyInsights } from './services/gemini';
 import { cn } from './lib/utils';
-import { getSupabase } from './lib/supabaseClient';
+import { supabase } from './lib/supabaseClient';
 import { generateReportCard, generateFeeReceipt } from './services/pdfService';
 import { 
   getStudents, saveStudent, deleteStudent, Student, Grade,
